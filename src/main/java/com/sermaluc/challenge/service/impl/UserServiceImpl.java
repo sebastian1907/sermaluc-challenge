@@ -8,6 +8,7 @@ import com.sermaluc.challenge.repository.PhoneRepository;
 import com.sermaluc.challenge.repository.UserRepository;
 import com.sermaluc.challenge.service.UserService;
 import com.sermaluc.challenge.vo.UserVO;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Setter
     @Autowired
     UserRepository userRepository;
 
+    @Setter
     @Autowired
     PhoneRepository phoneRepository;
 
@@ -63,12 +66,6 @@ public class UserServiceImpl implements UserService {
         log.info("saving user {}", user);
 
         return userRepository.save(user);
-    }
-
-    public boolean checkEmailvalidity(String emailaddress){
-        String email_regex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$";
-        boolean b = emailaddress.matches(email_regex);
-        return b;
     }
 
     protected String generateToken(@Nonnull String username , @Nonnull String email) {
