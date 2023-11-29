@@ -90,6 +90,10 @@ java -jar target\challenge-0.0.1-SNAPSHOT.jar
 
 ![test_conflicto](./recursos/Postman Conflicto correo.png)
 
+* Correo Invalido
+
+![test_correo_invalido](./recursos/Postman Correo Invalido.png)
+
 
 ### Listar Usuarios:
 
